@@ -4,8 +4,12 @@ import "slick-carousel/slick/slick-theme.css";
 import React, { Component } from "react";
 import Slider from "react-slick";
 import "./carousel.css";
-export default class SimpleSlider extends Component {
-  render() {
+import { useState,useEffect } from "react/cjs/react.production.min";
+
+
+export default function Footer() {
+
+  
     const settings = {
       dots: true,
       infinite: true,
@@ -14,6 +18,14 @@ export default class SimpleSlider extends Component {
       slidesToScroll: 1,
       autoplay: true
     };
+    
+  
+  //  title: post.title,
+  //  meta: post.meta,
+  //  slug: post.slug,
+  //  thumbnail: post.thumbnail?.url,
+  //  author: post.author,
+
     return (
       <div >
         <Slider {...settings}>
@@ -35,5 +47,4 @@ export default class SimpleSlider extends Component {
         </Slider>
       </div>
     );
-  }
-}
+    }

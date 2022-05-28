@@ -1,4 +1,6 @@
-.oppo {
+.home {
+    display: flex;
+    flex-wrap: wrap;
     padding-top: 50px;
   }
   

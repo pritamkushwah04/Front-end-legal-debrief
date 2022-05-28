@@ -4,7 +4,7 @@ import "./sidebar.css";
 export default function Sidebar() {
   return (
     <div className="sidebar">
-      <div className="sidebarItem">
+      {/* <div className="sidebarItem">
         <span className="sidebarTitle">CATEGORIES</span>
         <ul className="sidebarList">
           <li className="sidebarListItem">
@@ -39,6 +39,7 @@ export default function Sidebar() {
           </li>
         </ul>
       </div>
+       */}
       <div className="sidebarItem">
         <span className="sidebarTitle">FOLLOW US</span>
         <div className="sidebarSocial">

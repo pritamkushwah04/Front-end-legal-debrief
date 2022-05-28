@@ -1,12 +1,12 @@
 import Topbar from "./components/topbar/Topbar";
 import Footer from "./components/footer/Footer";
 import Homepage from "./pages/homepage/Homepage";
-import Login from "./pages/login/Login";
-import Register from "./pages/register/Register";
-import Settings from "./pages/settings/Settings";
 import Single from "./pages/single/Single";
-import Write from "./pages/write/Write";
+import FeaturedSingle from "./pages/featuredSingle/FeaturedSingle";
+
 import Opportunity from "./pages/opportunity/Opportunity";
+import Blogs from "./pages/blogs/Blogs";
+import ScrollToTop from "./components/ScrollToTop";
 
 import React, { Component } from "react";
 import "slick-carousel/slick/slick.css"; 
@@ -15,9 +15,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const currentUser = true;
+  const scrollToTop =() =>window.scrollTo({top:0,behavior:"smooth"});
+
   return (
    <>
     <Router>
+      <ScrollToTop/>
       <Topbar />
       <Switch>
         <Route exact path="/">
@@ -26,19 +29,15 @@ function App() {
         <Route path="/posts">
           <Homepage />
         </Route>
-        <Route path="/register">
-          {currentUser ? <Homepage /> : <Register />}
-        </Route>
-        <Route path="/login">{currentUser ? <Homepage /> : <Login />}</Route>
-        <Route path="/post/:id">
+        <Route path="/post/:postId">
           <Single />
         </Route>
-        <Route path="/write">{currentUser ? <Write /> : <Login />}</Route>
-        <Route path="/opportunity"><Opportunity/></Route>
-        <Route path="/settings">
-          {currentUser ? <Settings /> : <Login />}
+        <Route path="/featured-posts/:postId">
+          <FeaturedSingle />
         </Route>
-  
+        <Route path="/opportunity"><Opportunity/></Route>
+        <Route path="/blogs"><Blogs/></Route>
+      
       </Switch>
       <Footer/>    
     </Router>

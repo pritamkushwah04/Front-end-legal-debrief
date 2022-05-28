@@ -1,20 +1,22 @@
 import Sidebar from "../../components/sidebar/Sidebar";
 import SinglePost from "../../components/singlePost/SinglePost";
-import "./single.css";
+import "./featuredSingle.css";
 import { useParams } from "react-router-dom";
 import React, {useEffect,useState} from 'react';
-import { getTotalPosts } from "../../api/posts";
+import { getFeaturedPosts } from "../../api/posts";
 
 
 
 export default function Single() {
   const params = useParams();
   const postId = params.postId;
-  // console.log(postId);
+  console.log("postId: "+postId);
   const [totalPosts, setTotalPost] = useState([]);
   const [postCount, setPostCount] = useState([]);
+  console.log("featuredSingle called");
   const fetchPosts = async () => {
-    const totalPosts= await getTotalPosts();
+    //call getTotalFeaturedPosts()
+    const totalPosts= await getFeaturedPosts();
     setTotalPost(totalPosts);
     setPostCount(totalPosts.posts.length);
   };
@@ -30,9 +32,9 @@ export default function Single() {
   
   
   if(postCount!=0){
-    console.log("inside if condition");
     totalPosts.posts.map(post => {
       if(postId==post.id){
+         console.log("inside if condition");
          ptitle=post.title;
          pslug=post.slug;
          pimg=post.thumbnail;
