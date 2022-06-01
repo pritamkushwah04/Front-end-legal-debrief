@@ -1,5 +1,5 @@
 import "./blogs.css";
-import BlogPosts from "../../components/blogpost/BlogPosts"
+import Posts from "../../components/posts/Posts"
 import Sidebar from "../../components/sidebar/Sidebar";
 
 export default function Blogs() {
@@ -7,7 +7,7 @@ export default function Blogs() {
     return (
       <>
         <div className="home">
-          <BlogPosts />
+          <Posts />
           <Sidebar />
         </div>
       </>

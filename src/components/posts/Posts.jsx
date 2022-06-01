@@ -1,7 +1,7 @@
 import Post from "../post/Post";
 import "./posts.css";
-import { getPosts } from "../../api/posts";
-import { getTotalPosts } from "../../api/posts";
+import { getBlogPosts } from "../../api/posts";
+import { getTotalBlogPosts } from "../../api/posts";
 
 import React, {useEffect,useState} from 'react';
 
@@ -29,9 +29,9 @@ export default function Posts() {
   const paginationArr   = new Array(paginationCount).fill(" ");
   
   const fetchPosts = async () => {
-    const totalPosts= await getTotalPosts();
+    const totalPosts= await getTotalBlogPosts();
     console.log("pageNo -> " +pageNo );
-    const { error, posts} = await getPosts(pageNo, POST_LIMIT);
+    const { error, posts} = await getBlogPosts(pageNo, POST_LIMIT);
     if(error){
         return console.log(error);
     }

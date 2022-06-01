@@ -3,19 +3,19 @@
     background-color:#262626;
     width: 100%;
     bottom: 0;
-    font-size: 25px;
+    font-size: 24px;
    }
 
 .about{
-  flex: 6;
-  height: fit-content;
-  margin: 20px;
-  padding-bottom: 30px;
-  background-color: #262626 ;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    flex: 6;
+    display: flex;
+    margin: 20px;
+    padding-bottom: 30px;
+    background-color:  #262626;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .contact{
     flex: 6;
@@ -31,10 +31,8 @@
 }
 
 .para{
-    flex: 6;
     display: flex;
     margin: 20px;
-    padding-bottom: 30px;
     align-items: center;
     flex-direction: column;
     color: #a1a5a8;

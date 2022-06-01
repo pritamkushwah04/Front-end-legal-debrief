@@ -1,9 +1,10 @@
 import Post from "../post/Post";
-import "./opportunityPost.css";
-import { getOpportunityPosts } from "../../api/posts";
-import { getTotalOpportunityPosts } from "../../api/posts";
+import "./tagPost.css";
+import { getRelatedOpportunityPosts } from "../../api/posts";
+import { getTotalRelatedOpportunityPosts } from "../../api/posts";
 
 import React, {useEffect,useState} from 'react';
+import { useParams } from "react-router-dom";
 
 let pageNo = 0;
 const POST_LIMIT = 9;
@@ -19,26 +20,21 @@ const getPaginationCount = (length) => {
 }
 
 export default function Posts() {
-  const scrollToTop =() =>window.scrollTo({top:0,behavior:"smooth"});
-  const content="Lorem, changed dolor sit amet consectetur adipisicing elit. Voluptates asperiores eius autem dolores doloremque repellat enim, reprehenderit, incidunt recusandae voluptatum eveniet sapiente neque ut nisi eos minus, sit cumque. Unde! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates asperiores eius autem dolores doloremque repellat enim, reprehenderit, incidunt recusandae voluptatum eveniet sapiente neque ut nisi eos minus, sit cumque. Unde! ";
-
-  // const { searchResult } = useSearch();
+  const tag="call-for-blogs";
   const [posts, setPosts] = useState([]);
   const [totalPostCount, setTotalPostCount] = useState([]);
   const paginationCount = getPaginationCount(totalPostCount);
   const paginationArr   = new Array(paginationCount).fill(" ");
   
   const fetchPosts = async () => {
-    const totalPosts= await getTotalOpportunityPosts();
-    console.log("pageNo -> " +pageNo );
-    const { error, posts} = await getOpportunityPosts(pageNo, POST_LIMIT);
+    const totalPosts= await getTotalRelatedOpportunityPosts(tag);
+    const { error, posts} = await getRelatedOpportunityPosts(pageNo, POST_LIMIT,tag);
     if(error){
         return console.log(error);
     }
     setPosts(posts);
     setTotalPostCount(totalPosts.posts.length);
-};
-
+  };
   useEffect(() => {
     fetchPosts();
   }, []);
@@ -76,7 +72,7 @@ export default function Posts() {
                  </button>
              );
          })}
-     </div> : <div>NO PAGE</div>}
+     </div> : <div>NO POST</div>}
      </div>
 
   );

@@ -1,21 +1,20 @@
 .oppTop{
     width: 100%;
     height: 45px;
-    background: #f3f0f0;
     top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: 999;
     font-family: "Josefin Sans", sans-serif;
   };
 
   .oppTopCenter {
-    flex: 12;
+    display: flex;
+    justify-content: space-between;
+    background-color: red;
     }
   
 
   .oppTopList {
+    background-color: green;
     display: flex;
     justify-content: center;
     margin: 0;
@@ -24,6 +23,7 @@
   }
   
   .oppTopListItem{
+    background-color:#fafafa;
     border-left:1px solid ;
     padding: 12px 15px;
     font-size: 18px;

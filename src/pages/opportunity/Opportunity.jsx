@@ -1,21 +1,69 @@
 import "./opportunity.css";
 import { useLocation } from "react-router";
-import Posts from "../../components/posts/Posts";
+import OpportunityPost from "../../components/opportunityPost/opportunityPost";
+import CallForBlogs from "../../components/opportunityTags/CallForBlogs";
+import Debate from "../../components/opportunityTags/Debate";
+import Moots from "../../components/opportunityTags/moots";
+
+import CallForPapers from "../../components/opportunityTags/CallForPapers";
 import Sidebar from "../../components/sidebar/Sidebar";
-import OpportunitiesTopBar from"../../components/opportunitiesTopBar/OppotunitiesTopBar"
+import OpportunitiesTopBar from "../../components/opportunitiesTopBar/OppotunitiesTopBar"
 import Carousel from "../../components/carousel/Carousel";
+import { BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+  useRouteMatch 
+} from "react-router-dom";
 
 export default function Opportunity() {
-  return (
-      <>
-        <div >
-          <OpportunitiesTopBar/>
-          <div className="home">
-              <Posts />
-              <Sidebar />
-          </div>
-        </div>
-      </>
-  );
+  let { path, url } = useRouteMatch();
+  console.log("path");
+  console.log(path);
   
+  return (
+
+    <>
+      <OpportunitiesTopBar />
+      <div className="opphome">
+        <Switch>
+          <Route exact path={path}>
+            <OpportunityPost />
+          </Route>
+          <Route path="/opportunity/debate">
+            <Debate />
+          </Route>
+          <Route path="/opportunity/call-for-blogs">
+            <CallForBlogs/>
+          </Route>
+          <Route path="/opportunity/call-for-papers">
+            <CallForPapers />
+          </Route>
+          <Route path="/opportunity/conferences-and-seminars">
+            <Debate />
+          </Route>
+          <Route path="/opportunity/moots">
+            <Moots />
+          </Route>
+          {/* <Route path="/opportunity/debate">
+            <Debate />
+          </Route>
+          <Route path="/opportunity/debate">
+            <Debate />
+          </Route>
+          <Route path="/opportunity/debate">
+            <Debate />
+          </Route>
+          <Route path="/opportunity/debate">
+            <Debate />
+          </Route>
+          <Route path="/opportunity/debate">
+            <Debate />
+          </Route>  */}
+        </Switch>
+        <Sidebar />
+      </div>
+    </>
+  );
 }

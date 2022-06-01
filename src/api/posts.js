@@ -1,6 +1,6 @@
 import client from "./client";
 
-
+// featured posts
 export const getFeaturedPosts = async () => {
     try{
         const {data} = await client(`/blogpost/featured-posts`);
@@ -15,10 +15,10 @@ export const getFeaturedPosts = async () => {
     }
 }
 
-export const getTotalPosts = async () => {
+// home page news posts 
+export const getTotalNewsPosts = async () => {
     try{
-        const {data} = await client(`/blogpost/posts`);
-        // console.log(data);
+        const {data} = await client(`/newsPost/posts`);
         return data;
     }catch(error){
         const { response } = error;
@@ -29,11 +29,11 @@ export const getTotalPosts = async () => {
     }
 }
 
-export const getPosts = async (pageNo, limit) => {
+export const getNewsPosts = async (pageNo, limit) => {
     try{
         console.log("jara hai " +pageNo);
         
-        const {data} = await client(`/blogpost/posts?pageNo=${pageNo}&limit=${limit}`);
+        const {data} = await client(`/newsPost/posts?pageNo=${pageNo}&limit=${limit}`);
         console.log(data);
         return data;
     }catch(error){
@@ -77,7 +77,7 @@ export const getBlogPosts = async (pageNo, limit) => {
 //will fetch Opportunity posts
 export const getTotalOpportunityPosts = async () => {
     try{
-        const {data} = await client(`/blogpost/posts`);
+        const {data} = await client(`/opportunityPost/posts`);
         // console.log(data);
         return data;
     }catch(error){
@@ -88,13 +88,65 @@ export const getTotalOpportunityPosts = async () => {
         return {error: error.message || error};  
     }
 }
-
-export const getBlogOpportunityPosts = async (pageNo, limit) => {
+export const getOpportunityPosts = async (pageNo, limit) => {
     try{
         console.log("jara hai " +pageNo);
         
-        const {data} = await client(`/blogpost/posts?pageNo=${pageNo}&limit=${limit}`);
+        const {data} = await client(`/opportunityPost/posts?pageNo=${pageNo}&limit=${limit}`);
         console.log(data);
+        return data;
+    }catch(error){
+        const { response } = error;
+        if(response?.data){
+            return response.data;
+        }
+        return {error: error.message || error};  
+    }
+}
+
+//will fetch RELATED with tags Opportunity posts
+export const getTotalRelatedOpportunityPosts = async (tag) => {
+    try{
+        console.log("tag");
+        console.log(tag);
+       // http://localhost:4848/api/opportunityPost/related-posts/moots
+        const {data} = await client(`/opportunityPost/related-posts/${tag}`);
+        console.log("data");
+        console.log(data);
+        return data;
+    }catch(error){
+        const { response } = error;
+        if(response?.data){
+            return response.data;
+        }
+        return {error: error.message || error};  
+    }
+}
+export const getRelatedOpportunityPosts = async (pageNo, limit,tag) => {
+    try{
+        const {data} = await client(`/opportunityPost/related-posts/${tag}?pageNo=${pageNo}&limit=${limit}`);
+        console.log(data);
+        return data;
+    }catch(error){
+        const { response } = error;
+        if(response?.data){
+            return response.data;
+        }
+        return {error: error.message || error};  
+    }
+}
+
+//single post 
+//   const data=[1,2,3]
+//   const data2=[4,5,6]
+//   const c=[...data, ...data2];
+  
+export const getTotalPosts = async () => {
+    try{
+        const {data} = await client(`/newsPost/posts`);
+        console.log("news post data");
+        console.log(data);
+        
         return data;
     }catch(error){
         const { response } = error;

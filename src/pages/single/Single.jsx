@@ -26,8 +26,7 @@ export default function Single() {
   var ptitle;
   var pslug;
   var pimg;
-  var pcontent="Lorem, changed dolor sit amet consectetur adipisicing elit. Voluptates asperiores eius autem dolores doloremque repellat enim, reprehenderit, incidunt recusandae voluptatum eveniet sapiente neque ut nisi eos minus, sit cumque. Unde! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates asperiores eius autem dolores doloremque repellat enim, reprehenderit, incidunt recusandae voluptatum eveniet sapiente neque ut nisi eos minus, sit cumque. Unde! Lorem, changed dolor sit amet consectetur adipisicing elit. Voluptates asperiores eius autem dolores doloremque repellat enim, reprehenderit, incidunt recusandae voluptatum eveniet sapiente neque ut nisi eos minus, sit cumque. Unde! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates asperiores eius autem dolores doloremque repellat enim, reprehenderit, incidunt recusandae voluptatum eveniet sapiente neque ut nisi eos minus, sit cumque. Unde! ";
-  
+  var pcontent;
   
   if(postCount!=0){
     console.log("inside if condition");
@@ -36,6 +35,7 @@ export default function Single() {
          ptitle=post.title;
          pslug=post.slug;
          pimg=post.thumbnail;
+         pcontent=post.content;
       }
     }) 
   }
@@ -43,9 +43,8 @@ export default function Single() {
   return (
     <div>
       {postCount?
-      <div>
+      <div >
       <SinglePost key={pslug} id={postId} title={ptitle} img={pimg} content={pcontent}></SinglePost>
-      <Sidebar/>
       </div>
       :<h1>NO POST</h1>
       }

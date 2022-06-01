@@ -24,14 +24,14 @@ export default function SinglePost(props) {
           {props.title}
         </h1>
         <div className="singlePostInfo">
-          <span>
+          {/* <span>
             Author:
             <b className="singlePostAuthor">
               <Link className="link" to="/posts?username=Safak">
                 Safak
               </Link>
             </b>
-          </span>
+          </span> */}
           <ReactTimeAgo date={"Apr 04, 2022"} locale="en-US" />
         </div>
         <p className="singlePostDesc">{props.content}

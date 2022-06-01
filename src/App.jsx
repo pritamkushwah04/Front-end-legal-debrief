@@ -35,9 +35,10 @@ function App() {
         <Route path="/featured-posts/:postId">
           <FeaturedSingle />
         </Route>
-        <Route path="/opportunity"><Opportunity/></Route>
+        <Route path="/opportunity">
+          <Opportunity/>
+        </Route>
         <Route path="/blogs"><Blogs/></Route>
-      
       </Switch>
       <Footer/>    
     </Router>

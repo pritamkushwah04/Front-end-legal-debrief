@@ -1,7 +1,7 @@
 import Post from "../post/Post";
-import "./blogPosts.css";
-import { getBlogPosts } from "../../api/posts";
-import { getTotalBlogPosts } from "../../api/posts";
+import "./newsPosts.css";
+import { getNewsPosts } from "../../api/posts";
+import { getTotalNewsPosts } from "../../api/posts";
 
 import React, {useEffect,useState} from 'react';
 
@@ -29,9 +29,9 @@ export default function Posts() {
   const paginationArr   = new Array(paginationCount).fill(" ");
   
   const fetchPosts = async () => {
-    const totalPosts= await getTotalBlogPosts();
+    const totalPosts= await getTotalNewsPosts();
     console.log("pageNo -> " +pageNo );
-    const { error, posts} = await getBlogPosts(pageNo, POST_LIMIT);
+    const { error, posts} = await getNewsPosts(pageNo, POST_LIMIT);
     if(error){
         return console.log(error);
     }
@@ -51,7 +51,7 @@ export default function Posts() {
  
   return (
     <div>
-    <div className="posts">
+    <div className="newsPosts">
       {posts.map(post => (
         <Post key={post.slug} id={post.id} title={post.title} img={post.thumbnail} content={content} />
       ))}
