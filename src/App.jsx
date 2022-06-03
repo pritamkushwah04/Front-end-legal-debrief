@@ -9,42 +9,42 @@ import Blogs from "./pages/blogs/Blogs";
 import ScrollToTop from "./components/ScrollToTop";
 
 import React, { Component } from "react";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const currentUser = true;
-  const scrollToTop =() =>window.scrollTo({top:0,behavior:"smooth"});
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-   <>
-    <Router>
-      <ScrollToTop/>
-      <Topbar />
-      <Switch>
-        <Route exact path="/">
-          <Homepage />
-        </Route>
-        <Route path="/posts">
-          <Homepage />
-        </Route>
-        <Route path="/post/:postId">
-          <Single />
-        </Route>
-        <Route path="/featured-posts/:postId">
-          <FeaturedSingle />
-        </Route>
-        <Route path="/opportunity">
-          <Opportunity/>
-        </Route>
-        <Route path="/blogs"><Blogs/></Route>
-      </Switch>
-      <Footer/>    
-    </Router>
-
-   </>
-    
+    <>
+      <Router>
+        <ScrollToTop />
+        <Topbar />
+        <Switch>
+          <Route exact path="/">
+            <Homepage />
+          </Route>
+          <Route path="/posts">
+            <Homepage />
+          </Route>
+          <Route path="/post/:postId">
+            <Single />
+          </Route>
+          <Route path="/featured-posts/:postId">
+            <FeaturedSingle />
+          </Route>
+          <Route path="/opportunity">
+            <Opportunity />
+          </Route>
+          <Route path="/blogs">
+            <Blogs />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+    </>
   );
 }
 
