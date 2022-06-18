@@ -12,14 +12,13 @@
 }
 .icon {
   width: 135px;
-  height: 110px;
+  height: 50px;
   object-fit: cover;
   cursor: pointer;
 }
 
 
-.topLeft,
-.topRight {
+.topLeft{
   flex: 3;
   display: flex;
   align-items: center;
@@ -33,7 +32,7 @@
   flex: 6;
 }
 
-.topList {
+.navLinks {
   display: flex;
   justify-content: center;
   margin: 0;
@@ -53,3 +52,50 @@
     color: gray;
 }
 
+.topRight{
+  flex: 3;
+}
+
+.mobile-menu-icon{
+  display: none; 
+  float: right;
+}
+
+@media screen and (max-width:650px ) {
+  .icon{
+    display: flex;
+    width: 135px;
+    height: 50px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  
+  .navLinks{
+    display: none;
+  }
+  
+  .navLinksMobile{
+    position: absolute;
+    display: block;
+    list-style: none;
+    background-color: whitesmoke;
+    left: 0;
+    top: 50px;
+    transition:all 0.5s ease-out;
+    width: 100%;
+  }
+  
+  .topListItem {
+    margin-left: 25px;
+    margin-top: 8px;
+    margin-bottom: 2;
+    font-size: 18px;
+    font-weight: 300;
+    cursor: pointer;
+    color: #010913;
+  }
+
+  .mobile-menu-icon{
+    display: block;
+  }
+}

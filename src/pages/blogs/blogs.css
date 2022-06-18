@@ -1,5 +1,8 @@
 .home {
     display: flex;
+    flex-wrap: wrap ;
+    padding-top: 20px;
+    background-color: #f5f7fa;
   }
   
  

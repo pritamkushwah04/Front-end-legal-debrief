@@ -53,7 +53,7 @@ export default function Posts() {
     <div>
     <div className="newsPosts">
       {posts.map(post => (
-        <Post key={post.slug} id={post.id} title={post.title} img={post.thumbnail} content={content} />
+        <Post key={post.slug} id={post.id} title={post.title} img={post.thumbnail} content={post.content} />
       ))}
     </div>
     

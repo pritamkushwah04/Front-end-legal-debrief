@@ -1,4 +1,6 @@
 .hhome {
   display: flex;  
-  
+  flex-wrap: wrap;
+  background-color: #f5f7fa;
+  padding-top: 20px;
 }

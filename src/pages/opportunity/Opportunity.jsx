@@ -46,6 +46,7 @@ export default function Opportunity() {
           <Route path="/opportunity/moots">
             <Moots />
           </Route>
+          
           {/* <Route path="/opportunity/debate">
             <Debate />
           </Route>

@@ -1,0 +1,10 @@
+.posts{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 935px;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: #f5f7fa; 
+}
+

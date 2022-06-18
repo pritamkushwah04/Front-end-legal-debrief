@@ -25,7 +25,7 @@ export default function FeaturedPosts(){
       
     return(
       <div className='fp'>
-          <Carousel breakPoints={breakPoints}>
+          <Carousel breakPoints={breakPoints} pagination={false} showArrows={false} enableAutoPlay={true} autoPlaySpeed={2000} >
           {featuredposts.map(post => (
              <FeaturedPost key={post.slug} img={post.thumbnail} id={post.id}/>
           ))}        

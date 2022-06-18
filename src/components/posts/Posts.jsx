@@ -62,7 +62,7 @@ export default function Posts() {
             id={post.id}
             title={post.title}
             img={post.thumbnail}
-            content={content}
+            content={post.content}
           />
         ))}
       </div>

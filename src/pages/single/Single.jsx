@@ -25,7 +25,7 @@ export default function Single() {
     await Promise.all(promises).then((data) => {
       // totalPosts.push(...data.posts);
       // totalPosts = [...totalPosts, data.posts];
-      data.forEach((item) => {
+    data.forEach((item) => {
         totalPosts = [...totalPosts, ...item.posts];
       });
     });
@@ -68,7 +68,7 @@ export default function Single() {
   return (
     <div>
       {postCount ? (
-        <div>
+        <div className="single">
           <SinglePost
             key={postInfo.slug}
             id={postId}
@@ -76,6 +76,7 @@ export default function Single() {
             img={postInfo.pimg}
             content={postInfo.pcontent}
           ></SinglePost>
+          <Sidebar/>
         </div>
       ) : (
         <h1>NO POST</h1>

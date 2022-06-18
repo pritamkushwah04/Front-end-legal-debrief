@@ -8,7 +8,7 @@ export default function Blogs() {
     <>
       <div className="home">
         <Posts />
-        {/* <Sidebar /> */}
+        <Sidebar />
       </div>
     </>
   );
