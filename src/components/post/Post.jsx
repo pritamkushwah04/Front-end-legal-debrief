@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./post.css";
 import React from "react";
+import dateFormat from 'dateformat'
 import ReactTimeAgo from "react-time-ago";
 import ReactMarkdown from 'react-markdown'
 
@@ -12,7 +13,7 @@ export default function Post(props) {
   return (
     <div className="post">
       <img className="postImg" src={props.img} alt="" />
-      <h5 className="postDate">Apr 04, 2022</h5>
+      <h5 className="postDate">{dateFormat(props.date, "mmmm d, yyyy")}</h5>
       
     
       <div className="postInfo">

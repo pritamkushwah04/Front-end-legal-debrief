@@ -8,6 +8,8 @@ import {
   getOpportunityPosts,
   getNewsPosts,
 } from "../../api/posts";
+import dateFormat from 'dateformat';
+
 
 export default function Single() {
   const params = useParams();
@@ -39,6 +41,7 @@ export default function Single() {
     ptitle: "",
     pimg: "",
     pcontent: "",
+    pdate: "",
   });
 
   useEffect(() => {
@@ -54,16 +57,22 @@ export default function Single() {
     if (postCount != 0) {
       console.log("inside if condition", { totalPosts });
       let tempPost = totalPosts.find((post) => post.id == postId);
+      console.log("in single post");
+
       console.log({ tempPost });
+
       if (tempPost)
         setPostInfo({
           ptitle: tempPost.title,
           pslug: tempPost.slug,
           pimg: tempPost.thumbnail,
           pcontent: tempPost.content,
+          pdate: tempPost.createdAt,
         });
     }
   }, [postCount]);
+
+  
 
   return (
     <div>
@@ -75,6 +84,7 @@ export default function Single() {
             title={postInfo.ptitle}
             img={postInfo.pimg}
             content={postInfo.pcontent}
+            date={dateFormat(postInfo.pdate, "mmmm d, yyyy")}
           ></SinglePost>
           <Sidebar/>
         </div>

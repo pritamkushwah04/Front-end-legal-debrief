@@ -31,12 +31,10 @@ export const getTotalNewsPosts = async () => {
 
 export const getNewsPosts = async (pageNo, limit) => {
   try {
-    console.log("jara hai " + pageNo);
-
     const { data } = await client(
       `/newsPost/posts?pageNo=${pageNo}&limit=${limit}`
     );
-    console.log(data);
+//    console.log(data);
     return data;
   } catch (error) {
     const { response } = error;

@@ -28,9 +28,11 @@ export default function Single() {
   var ptitle;
   var pslug;
   var pimg;
-  var pcontent = "Lorem, changed dolor sit amet consectetur adipisicing elit. Voluptates asperiores eius autem dolores doloremque repellat enim, reprehenderit, incidunt recusandae voluptatum eveniet sapiente neque ut nisi eos minus, sit cumque. Unde! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates asperiores eius autem dolores doloremque repellat enim, reprehenderit, incidunt recusandae voluptatum eveniet sapiente neque ut nisi eos minus, sit cumque. Unde! Lorem, changed dolor sit amet consectetur adipisicing elit. Voluptates asperiores eius autem dolores doloremque repellat enim, reprehenderit, incidunt recusandae voluptatum eveniet sapiente neque ut nisi eos minus, sit cumque. Unde! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates asperiores eius autem dolores doloremque repellat enim, reprehenderit, incidunt recusandae voluptatum eveniet sapiente neque ut nisi eos minus, sit cumque. Unde! ";
-
-
+  var pcontent;
+  var pdate;
+  console.log("in featured");
+  console.log(totalPosts.posts);
+  
   if (postCount != 0) {
     totalPosts.posts.map(post => {
       if (postId == post.id) {
@@ -38,6 +40,8 @@ export default function Single() {
         ptitle = post.title;
         pslug = post.slug;
         pimg = post.thumbnail;
+        pcontent=post.content;
+        pdate=post.createdAt;
       }
     })
   }
@@ -46,7 +50,7 @@ export default function Single() {
     <div >
       {postCount ?
         <div className="fs">
-          <SinglePost key={pslug} id={postId} title={ptitle} img={pimg} content={pcontent}></SinglePost>
+          <SinglePost key={pslug} id={postId} title={ptitle} img={pimg} content={pcontent} date={pdate}></SinglePost>
           <Sidebar />
         </div>
         : <h1>NO POST</h1>

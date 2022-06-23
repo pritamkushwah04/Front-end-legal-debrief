@@ -22,7 +22,7 @@ export default function SinglePost(props) {
           </h1>
           <hr />
           <div className="singlePostInfo">
-            Apr 04, 2022
+            {props.date}
           </div>
         </div>
 

@@ -10,19 +10,12 @@ const POST_LIMIT = 9;
 
 const getPaginationCount = (length) => {
   const division = length / POST_LIMIT;
-
-  // if (division % 1 !== 0) {
-  //   return Math.floor(division) + 1;
-  // }
-
   return division + (length % POST_LIMIT) ? 1 : 0;
 };
 
 export default function Posts() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
-  const content =
-    "Lorem, changed dolor sit amet consectetur adipisicing elit. Voluptates asperiores eius autem dolores doloremque repellat enim, reprehenderit, incidunt recusandae voluptatum eveniet sapiente neque ut nisi eos minus, sit cumque. Unde! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates asperiores eius autem dolores doloremque repellat enim, reprehenderit, incidunt recusandae voluptatum eveniet sapiente neque ut nisi eos minus, sit cumque. Unde! ";
-
+ 
   // const { searchResult } = useSearch();
   const [posts, setPosts] = useState([]);
   const [totalPostCount, setTotalPostCount] = useState(0);
@@ -63,11 +56,12 @@ export default function Posts() {
             title={post.title}
             img={post.thumbnail}
             content={post.content}
+            date={post.createdAt}
           />
         ))}
       </div>
 
-      {paginationArr.length > 0 ? (
+      {/* {paginationArr.length > 0 ? (
         <div className="py-5 flex justify-center items-center space-x-3">
           {paginationArr.map((_, index) => {
             return (
@@ -87,7 +81,7 @@ export default function Posts() {
         </div>
       ) : (
         <div>NO PAGE</div>
-      )}
+      )} */}
     </div>
   );
 }

@@ -53,13 +53,13 @@ export default function Posts() {
     <div>
     <div className="posts">
       {posts.map(post => (
-        <Post key={post.slug} id={post.id} title={post.title} img={post.thumbnail} content={post.content} />
+        <Post key={post.slug} id={post.id} title={post.title} img={post.thumbnail} content={post.content} date={post.createdAt} />
       ))}
     </div>
     
     
      
-     {paginationArr.length >0 ? <div className="py-5 flex justify-center items-center space-x-3">
+     {/* {paginationArr.length >0 ? <div className="py-5 flex justify-center items-center space-x-3">
          {paginationArr.map((_, index) => {
              return( 
                  <button
@@ -76,7 +76,7 @@ export default function Posts() {
                  </button>
              );
          })}
-     </div> : <div>NO PAGE</div>}
+     </div> : <div>NO PAGE</div>} */}
      </div>
 
   );
