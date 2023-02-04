@@ -8,8 +8,7 @@ import {
   getOpportunityPosts,
   getNewsPosts,
 } from "../../api/posts";
-import dateFormat from 'dateformat';
-
+import dateFormat from "dateformat";
 
 export default function Single() {
   const params = useParams();
@@ -27,7 +26,7 @@ export default function Single() {
     await Promise.all(promises).then((data) => {
       // totalPosts.push(...data.posts);
       // totalPosts = [...totalPosts, data.posts];
-    data.forEach((item) => {
+      data.forEach((item) => {
         totalPosts = [...totalPosts, ...item.posts];
       });
     });
@@ -70,8 +69,6 @@ export default function Single() {
     }
   }, [postCount]);
 
-  
-
   return (
     <div>
       {postCount ? (
@@ -84,7 +81,7 @@ export default function Single() {
             content={postInfo.pcontent}
             date={dateFormat(postInfo.pdate, "mmmm d, yyyy")}
           ></SinglePost>
-          <Sidebar/>
+          <Sidebar />
         </div>
       ) : (
         <h1>NO POST</h1>
