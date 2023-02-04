@@ -1,3 +1,5 @@
+
+
 .single{
     display: flex;
     flex-wrap: wrap;
@@ -6,5 +8,17 @@
     padding-right: 100px;
     padding-bottom: 50px;
     background-color: #f5f7fa;
-    
 }
+@media screen and (max-width:768px ){
+    .single{
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 25px;
+        padding-left: 35px;
+        padding-right: 35px;
+        padding-bottom: 50px;
+        background-color: #f5f7fa;
+    }
+}
+
+  

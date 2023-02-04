@@ -4,7 +4,6 @@
 
 import "./opportunitiesTopBar.css";
 import { Link } from "react-router-dom";
-import logo from "../../image/logo_wobg.png"
 
 
 export default function Topbar() {

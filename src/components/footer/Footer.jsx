@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./footer.css";
 
 export default function Footer() {
@@ -14,8 +13,13 @@ export default function Footer() {
                 	Call for articles and blogs</p>
           </div>
           <div className="block">
-             <h5 className="title">CONTACT</h5>
-             <p className="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates asperiores eius autem dolores doloremque repellat enim, reprehenderit, incidunt recusandae voluptatum eveniet sapiente neque ut nisi eos minus, sit cumque. Unde!</p>
+             <h5 className="title">CONTACT US</h5>
+             <p className="para">
+             <p>9993903175</p>
+             <p>To Submit your blog: mail us at team.legaldebrief@gmail.com</p>
+
+             
+             </p>
           </div>
        </div>
 </footer>

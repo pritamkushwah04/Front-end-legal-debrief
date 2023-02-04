@@ -55,10 +55,8 @@ export default function Single() {
     // var pcontent;
 
     if (postCount != 0) {
-      console.log("inside if condition", { totalPosts });
       let tempPost = totalPosts.find((post) => post.id == postId);
       console.log("in single post");
-
       console.log({ tempPost });
 
       if (tempPost)

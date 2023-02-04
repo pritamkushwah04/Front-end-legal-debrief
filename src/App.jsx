@@ -3,19 +3,17 @@ import Footer from "./components/footer/Footer";
 import Homepage from "./pages/homepage/Homepage";
 import Single from "./pages/single/Single";
 import FeaturedSingle from "./pages/featuredSingle/FeaturedSingle";
-
+import styles from "./index.css"
 import Opportunity from "./pages/opportunity/Opportunity";
 import Blogs from "./pages/blogs/Blogs";
 import ScrollToTop from "./components/ScrollToTop";
 
-import React, { Component } from "react";
+import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-  const currentUser = true;
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <>

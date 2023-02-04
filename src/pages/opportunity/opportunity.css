@@ -1,6 +1,7 @@
 .opphome {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding-top: 10px;
     background-color: #f5f7fa;
   }

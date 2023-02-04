@@ -7,8 +7,8 @@ export default function Blogs() {
   return (
     <>
       <div className="home">
-        <Posts />
-        <Sidebar />
+      <Posts />
+      <Sidebar />
       </div>
     </>
   );

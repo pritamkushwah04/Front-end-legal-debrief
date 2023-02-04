@@ -1,5 +1,4 @@
 import "./opportunity.css";
-import { useLocation } from "react-router";
 import OpportunityPost from "../../components/opportunityPost/opportunityPost";
 import CallForBlogs from "../../components/opportunityTags/CallForBlogs";
 import Debate from "../../components/opportunityTags/Debate";
@@ -8,12 +7,10 @@ import Moots from "../../components/opportunityTags/moots";
 import CallForPapers from "../../components/opportunityTags/CallForPapers";
 import Sidebar from "../../components/sidebar/Sidebar";
 import OpportunitiesTopBar from "../../components/opportunitiesTopBar/OppotunitiesTopBar"
-import Carousel from "../../components/carousel/Carousel";
-import { BrowserRouter as Router,
+ import {
+  // BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useParams,
   useRouteMatch 
 } from "react-router-dom";
 

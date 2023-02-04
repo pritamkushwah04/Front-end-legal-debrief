@@ -1,10 +1,9 @@
 import "./carousel.css";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "./carousel.css";
-import { useState,useEffect } from "react/cjs/react.production.min";
 
 
 export default function Footer() {

@@ -6,50 +6,28 @@ import { getTotalBlogPosts } from "../../api/posts";
 import React, { useEffect, useState } from "react";
 
 let pageNo = 0;
-const POST_LIMIT = 9;
-
-const getPaginationCount = (length) => {
-  const division = length / POST_LIMIT;
-  return division + (length % POST_LIMIT) ? 1 : 0;
-};
 
 export default function Posts() {
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
- 
-  // const { searchResult } = useSearch();
   const [posts, setPosts] = useState([]);
   const [totalPostCount, setTotalPostCount] = useState(0);
-  const paginationCount = getPaginationCount(totalPostCount);
-  // const paginationArr = new Array(paginationCount).fill(" ");
-  const [paginationArr, setPaginationArr] = useState([]);
-
+  
   const fetchPosts = async () => {
-    const totalPosts = await getTotalBlogPosts();
-    console.log("pageNo -> " + pageNo);
-    const { error, posts } = await getBlogPosts(pageNo, POST_LIMIT);
+    const { error, posts } = await getBlogPosts(pageNo, 100);
     if (error) {
       return console.log(error);
     }
     setPosts(posts);
-    console.log({ posts });
-    setTotalPostCount(totalPosts.posts.length);
-    setPaginationArr(new Array(totalPosts.posts.length));
+    setTotalPostCount(Math.floor(posts.length/3)*3);
   };
 
   useEffect(() => {
     fetchPosts();
-    console.log("Mai chal rha hu");
   }, []);
-
-  const fetchMorePosts = (index) => {
-    pageNo = index;
-    fetchPosts();
-  };
 
   return (
     <div>
       <div className="posts">
-        {posts.map((post) => (
+        {posts.slice(0,totalPostCount).map((post) => (
           <Post
             key={post.slug}
             id={post.id}
@@ -60,28 +38,6 @@ export default function Posts() {
           />
         ))}
       </div>
-
-      {/* {paginationArr.length > 0 ? (
-        <div className="py-5 flex justify-center items-center space-x-3">
-          {paginationArr.map((_, index) => {
-            return (
-              <button
-                key={index}
-                onClick={() => fetchMorePosts(index)}
-                className={
-                  index === pageNo
-                    ? " text-blue-500 border-b-2 border-b-blue-500"
-                    : " text-gray-500"
-                }
-              >
-                {index + 1}
-              </button>
-            );
-          })}
-        </div>
-      ) : (
-        <div>NO PAGE</div>
-      )} */}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 .hhome {
   display: flex;  
   flex-wrap: wrap;
+  justify-content: center;
   background-color: #f5f7fa;
   padding-top: 20px;
 }

@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import "./post.css";
 import React from "react";
 import dateFormat from 'dateformat'
-import ReactTimeAgo from "react-time-ago";
-import ReactMarkdown from 'react-markdown'
 
 //it creates post
 export default function Post(props) {

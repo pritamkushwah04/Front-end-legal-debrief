@@ -4,7 +4,6 @@ import { getRelatedOpportunityPosts } from "../../api/posts";
 import { getTotalRelatedOpportunityPosts } from "../../api/posts";
 
 import React, {useEffect,useState} from 'react';
-import { useParams } from "react-router-dom";
 
 let pageNo = 0;
 const POST_LIMIT = 9;
