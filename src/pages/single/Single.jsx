@@ -67,7 +67,7 @@ export default function Single() {
           pdate: tempPost.createdAt,
         });
     }
-  }, [postCount]);
+  }, [postCount, totalPosts, postId]);
 
   return (
     <div>
