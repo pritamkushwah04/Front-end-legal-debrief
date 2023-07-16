@@ -6,7 +6,7 @@ import { getTotalOpportunityPosts } from "../../api/posts";
 import React, {useEffect,useState} from 'react';
 
 let pageNo = 0;
-const POST_LIMIT = 9;
+// const POST_LIMIT = 9;
 
 const getPaginationCount = (length) => {
     const division = length / POST_LIMIT;

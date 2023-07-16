@@ -33,7 +33,7 @@ export default function Single() {
   console.log("in featured");
   console.log(totalPosts.posts);
   
-  if (postCount != 0) {
+  if (postCount !== 0) {
     totalPosts.posts.map(post => {
       if (postId == post.id) {
         console.log("inside if condition");
