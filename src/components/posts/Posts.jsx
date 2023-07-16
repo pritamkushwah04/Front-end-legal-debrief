@@ -1,7 +1,7 @@
 import Post from "../post/Post";
 import "./posts.css";
 import { getBlogPosts } from "../../api/posts";
-import { getTotalBlogPosts } from "../../api/posts";
+// import { getTotalBlogPosts } from "../../api/posts";
 
 import React, { useEffect, useState } from "react";
 

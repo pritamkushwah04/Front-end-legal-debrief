@@ -15,7 +15,7 @@ import OpportunitiesTopBar from "../../components/opportunitiesTopBar/Oppotuniti
 } from "react-router-dom";
 
 export default function Opportunity() {
-  let { path, url } = useRouteMatch();
+  let { path } = useRouteMatch();
   console.log("path");
   console.log(path);
   

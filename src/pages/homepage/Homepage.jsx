@@ -2,7 +2,7 @@ import { useLocation } from "react-router";
 import NewsPosts from "../../components/newsPosts/NewsPosts";
 import Sidebar from "../../components/sidebar/Sidebar";
 import FeaturedPosts from "../../components/featuredPosts/FeaturedPosts";
-import Footer from "../../components/footer/Footer";
+// import Footer from "../../components/footer/Footer";
 
 import "./homepage.css";
 

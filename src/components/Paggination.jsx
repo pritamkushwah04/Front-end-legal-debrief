@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import React from "react";
-import styles from "../index"
+// import styles from "../index"
 
 //it creates post
 export default function Pagination() {
