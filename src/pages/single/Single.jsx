@@ -53,8 +53,8 @@ export default function Single() {
     // var pimg;
     // var pcontent;
 
-    if (postCount != 0) {
-      let tempPost = totalPosts.find((post) => post.id == postId);
+    if (postCount !== 0) {
+      let tempPost = totalPosts.find((post) => post.id === postId);
       console.log("in single post");
       console.log({ tempPost });
 
@@ -67,7 +67,7 @@ export default function Single() {
           pdate: tempPost.createdAt,
         });
     }
-  }, [postCount]);
+  },);
 
   return (
     <div>

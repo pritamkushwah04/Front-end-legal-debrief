@@ -1,15 +1,15 @@
 import Post from "../post/Post";
-import Pagination from "../Paggination";
+// import Pagination from "../Paggination";
 import "./newsPosts.css";
 import { getNewsPosts } from "../../api/posts";
-import { getTotalNewsPosts } from "../../api/posts";
+// import { getTotalNewsPosts } from "../../api/posts";
 import ReactLoading from "react-loading";
-import styles from "../../index"
+// import styles from "../../index"
 
 import React, { useEffect, useState } from 'react';
 
 let pageNo = 0;
-const POST_LIMIT = 100;
+// const POST_LIMIT = 100;
 
 // const getPaginationCount = (length) => {
 //   const division = length / POST_LIMIT;

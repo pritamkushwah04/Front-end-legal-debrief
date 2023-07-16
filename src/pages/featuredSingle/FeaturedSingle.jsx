@@ -35,7 +35,7 @@ export default function Single() {
   
   if (postCount != 0) {
     totalPosts.posts.map(post => {
-      if (postId == post.id) {
+      if (postId === post.id) {
         console.log("inside if condition");
         ptitle = post.title;
         pslug = post.slug;
@@ -43,6 +43,7 @@ export default function Single() {
         pcontent=post.content;
         pdate=post.createdAt;
       }
+      return 0;
     })
   }
 

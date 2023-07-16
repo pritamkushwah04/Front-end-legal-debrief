@@ -1,6 +1,6 @@
 // import { Link } from "react-router-dom";
 import "./sidebar.css";
-import {FaTwitter} from 'react-icons/fa'
+// import {FaTwitter} from 'react-icons/fa'
 import Link from "@material-ui/core/Link";
 
 export default function Sidebar() {

@@ -1,22 +1,22 @@
 import Post from "../post/Post";
 import "./opportunityPost.css";
 import { getOpportunityPosts } from "../../api/posts";
-import { getTotalOpportunityPosts } from "../../api/posts";
+// import { getTotalOpportunityPosts } from "../../api/posts";
 
 import React, {useEffect,useState} from 'react';
 
 let pageNo = 0;
 const POST_LIMIT = 9;
 
-const getPaginationCount = (length) => {
-    const division = length / POST_LIMIT;
+// const getPaginationCount = (length) => {
+//     const division = length / POST_LIMIT;
 
-    if(division % 1 !== 0){
-        return Math.floor(division) + 1;
-    }
+//     if(division % 1 !== 0){
+//         return Math.floor(division) + 1;
+//     }
 
-    return division;
-}
+//     return division;
+// }
 
 export default function Posts() {
  
@@ -34,7 +34,7 @@ export default function Posts() {
 
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, );
 
   return (
     <div>
