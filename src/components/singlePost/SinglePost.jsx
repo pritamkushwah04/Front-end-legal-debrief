@@ -1,6 +1,6 @@
 import "./singlePost.css";
 import Markdown from 'markdown-to-jsx';
-import styles from "../../index.css"
+// import styles from "../../index.css"
 
 
 export default function SinglePost(props) {

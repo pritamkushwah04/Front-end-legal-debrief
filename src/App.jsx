@@ -3,7 +3,6 @@ import Footer from "./components/footer/Footer";
 import Homepage from "./pages/homepage/Homepage";
 import Single from "./pages/single/Single";
 import FeaturedSingle from "./pages/featuredSingle/FeaturedSingle";
-import styles from "./index.css"
 import Opportunity from "./pages/opportunity/Opportunity";
 import Blogs from "./pages/blogs/Blogs";
 import ScrollToTop from "./components/ScrollToTop";

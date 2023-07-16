@@ -4,7 +4,7 @@ import "./topbar.css";
 import React, {useState} from "react";
 
 export default function Topbar() {
-  const user = true;
+  // const user = true;
   const scrollToBottom =() =>window.scrollTo({top:100000000,behavior:"smooth"});
   const scrollToTop =() =>window.scrollTo({top:0,behavior:"smooth"});
   const [isMobile, setisMobile] = useState(false);
