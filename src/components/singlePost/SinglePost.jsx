@@ -4,6 +4,7 @@ import styles from "../../index.css"
 
 
 export default function SinglePost(props) {
+  console.log(styles);
   return (
     <div className="max-w-2xl mx-auto bg-slate-600">
       <img src={props.img} alt="" />

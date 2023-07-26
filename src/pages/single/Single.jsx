@@ -17,6 +17,7 @@ export default function Single() {
   // console.log(postId);
   const [totalPosts, setTotalPost] = useState([]);
   const [postCount, setPostCount] = useState([]);
+  console.log(styles);
 
   const fetchPosts = async () => {
     // const totalPosts = await getBlogPosts();
