@@ -9,6 +9,7 @@ import {
   getNewsPosts,
 } from "../../api/posts";
 import dateFormat from "dateformat";
+import styles from "../../index.css"
 
 export default function Single() {
   const params = useParams();
@@ -72,8 +73,8 @@ export default function Single() {
   return (
     <div>
       {postCount ? (
-        <div className="single">
-          <SinglePost
+        <div className="flex flex-wrap mx-auto my-4">
+          <SinglePost className="mx-24"
             key={postInfo.slug}
             id={postId}
             title={postInfo.ptitle}
@@ -81,7 +82,7 @@ export default function Single() {
             content={postInfo.pcontent}
             date={dateFormat(postInfo.pdate, "mmmm d, yyyy")}
           ></SinglePost>
-          <Sidebar />
+          <Sidebar className=""/>
         </div>
       ) : (
         <h1>NO POST</h1>

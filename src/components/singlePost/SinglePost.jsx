@@ -1,11 +1,11 @@
 import "./singlePost.css";
 import Markdown from 'markdown-to-jsx';
-// import styles from "../../index.css"
+import styles from "../../index.css"
 
 
 export default function SinglePost(props) {
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-2xl mx-auto bg-slate-600">
       <img src={props.img} alt="" />
       <div className="px-2">
         <h1 className="text-gray-800 font-semibold text-xl py-2">{props.title}</h1>

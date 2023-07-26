@@ -41,10 +41,6 @@ export default function Posts() {
     fetchPosts();
   }, []);
 
-  // const fetchMorePosts = (index) => {
-  //   pageNo = index;
-  //   fetchPosts();
-  // }
 
   if (fetching)
     return (
