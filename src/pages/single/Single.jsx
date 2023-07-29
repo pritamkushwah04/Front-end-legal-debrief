@@ -72,10 +72,10 @@ export default function Single() {
   }, [postCount, totalPosts, postId]);
 
   return (
-    <div>
+    <div className="bg-[#dedede]">
       {postCount ? (
-        <div className="flex flex-wrap mx-auto my-4">
-          <SinglePost className="mx-24"
+        <div className="flex flex-wrap mx-auto py-4">
+          <SinglePost className=""
             key={postInfo.slug}
             id={postId}
             title={postInfo.ptitle}
