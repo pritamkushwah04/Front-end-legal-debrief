@@ -23,7 +23,7 @@ export default function Opportunity() {
 
     <>
       <OpportunitiesTopBar />
-      <div className="flex justify-center bg-[#dedede] pt-4">
+      <div className="flex flex-wrap justify-center bg-[#dedede] pt-4">
         <Switch>
           <Route exact path={path}>
             <OpportunityPost />

@@ -72,7 +72,7 @@ export default function Single() {
     return (
       <div className="bg-[#dedede]">
         {postCount ? (
-          <div className="flex flex-wrap mx-auto py-4">
+          <div className="flex flex-wrap mx-auto py-4 justify-center">
             <SinglePost className=""
               key={postInfo.slug}
               id={postId}

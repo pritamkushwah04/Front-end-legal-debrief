@@ -5,10 +5,9 @@ import Link from "@material-ui/core/Link";
 
 export default function Sidebar() {
   return (
-    <div className="sidebar">
+    <div className="h-full max-w-2xl pb-[30px] rounded shadow-lg flex item-center bg-white">
       <div className="sidebarItem">
-        <span className="sidebarTitle">FOLLOW US</span>
-        
+        <span className="sidebarTitle overflow-hidden">FOLLOW US</span>
         <div className="sidebarSocial">
         <Link
         href="https://www.facebook.com/legaldebrief"><i style={{ color: '#3f729b' }}  className="sidebarIcon fab fa-facebook-square"></i>

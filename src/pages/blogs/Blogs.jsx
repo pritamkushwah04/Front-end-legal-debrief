@@ -5,7 +5,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 export default function Blogs() {
   return (
     <>
-      <div className="flex justify-center bg-[#dedede] pt-4">
+      <div className="flex flex-wrap justify-center bg-[#dedede] pt-4">
       <Posts />
       <Sidebar />
       </div>

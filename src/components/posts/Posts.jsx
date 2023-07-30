@@ -29,7 +29,7 @@ export default function Posts() {
   
   if (fetching)
     return (
-      <div className="flex  flex-wrap justify-center items-center">
+      <div className="flex flex-wrap xl:max-w-[950px] justify-center">
         {/* <ReactLoading type="bars" color="lightblue" /> */}
         <CardSkeleton/>
         <CardSkeleton/>
@@ -47,7 +47,7 @@ export default function Posts() {
 
   return (
     <div>
-      <div className="flex flex-wrap max-w-screen-lg justify-center">
+      <div className="flex flex-wrap xl:max-w-[950px] justify-center">
         {posts.slice(0,totalPostCount).map((post) => (
           <Post
             key={post.slug}
