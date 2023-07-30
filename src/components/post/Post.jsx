@@ -3,24 +3,19 @@ import "./post.css";
 import React from "react";
 import dateFormat from 'dateformat'
 
-//it creates post
 export default function Post(props) {
-  console.log("in post component");
-
-  // Last seen: <ReactTimeAgo date={date} locale="en-US"/>
   return (
-    <div className="post ">
-      <img className="postImg" src={props.img} alt="" />
-      <h5 className="postDate">{dateFormat(props.date, "mmmm d, yyyy")}</h5>
-      <div className="postInfo">
-        <span className="postTitle">
+    <div className="w-[300px] ml-1 mr-[10px] mb-[10px] flex flex-col shadow-xl bg-white rounded-lg">
+      <img className="rounded" src={props.img} alt="" />
+      <h5 className="m-1 flex text-[14px] text-[#918c8a]">{dateFormat(props.date, "mmmm d, yyyy")}</h5>
+      <div className="flex flex-col items-center">
+        <span className="text-[22px] font-Arial font-semibold mt-1 cursor-pointer text-center">
           <Link to={"/post/" + props.id} className="link">
             {props.title}{" "}
           </Link>
         </span>
         <hr />
       </div>
-      {/* <span className="postDate">1 hour ago</span> */}
     </div>
   );
 }

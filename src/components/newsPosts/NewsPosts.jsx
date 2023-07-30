@@ -44,7 +44,7 @@ export default function Posts() {
 
   if (fetching)
     return (
-      <div className="max-w-screen-lg flex  flex-wrap justify-center items-center">
+      <div className=" flex  flex-wrap justify-center items-center">
         <CardSkeleton/>
         <CardSkeleton/>
         <CardSkeleton/>
