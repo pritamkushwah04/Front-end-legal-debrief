@@ -4,7 +4,6 @@ import CardSkeleton from "../CardSkeleton";
 import "./newsPosts.css";
 import { getNewsPosts } from "../../api/posts";
 // import { getTotalNewsPosts } from "../../api/posts";
-import ReactLoading from "react-loading";
 // import styles from "../../index"
 
 import React, { useEffect, useState } from 'react';

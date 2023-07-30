@@ -3,7 +3,7 @@ import NewsPosts from "../../components/newsPosts/NewsPosts";
 import Sidebar from "../../components/sidebar/Sidebar";
 import FeaturedPosts from "../../components/featuredPosts/FeaturedPosts";
 // import Footer from "../../components/footer/Footer";
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import "./homepage.css";
 
 
