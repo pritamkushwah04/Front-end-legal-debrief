@@ -44,8 +44,7 @@ export default function Posts() {
 
   if (fetching)
     return (
-      <div className="newsPosts  flex justify-center items-center">
-        {/* <ReactLoading type="bars" color="lightblue" /> */}
+      <div className="max-w-screen-lg flex  flex-wrap justify-center items-center">
         <CardSkeleton/>
         <CardSkeleton/>
         <CardSkeleton/>
@@ -55,15 +54,13 @@ export default function Posts() {
         <CardSkeleton/>
         <CardSkeleton/>
         <CardSkeleton/>
-        
-        {/* <Post></Post> */}
       </div>
     );
 
 
   return (
     <div >
-      <div className="newsPosts ">
+      <div className="flex flex-wrap max-w-screen-lg justify-center">
         {posts.slice(0,totalPostCount).map(post => (
           <Post key={post.slug} id={post.id} title={post.title} img={post.thumbnail} content={post.content} date={post.createdAt} />
         ))}
