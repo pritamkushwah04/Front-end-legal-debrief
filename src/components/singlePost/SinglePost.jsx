@@ -18,28 +18,4 @@ export default function SinglePost(props) {
     </div>
   );
  
-  // return (
-  //   <div className="singlePost">
-  //     <div className="singlePostWrapper">
-  //       <div className="UpperSection">
-  //         <h1 className="font-weight: 400">
-  //           {props.title}
-  //         </h1>
-  //         <hr />
-  //         <div className="singlePostInfo">
-  //           {props.date}
-  //         </div>
-  //       </div>
-
-  //       <img
-  //         className="singlePostImg"
-  //         src={props.img}
-  //         alt=""
-  //       />
-  //       <div  >
-  //         {props.content && <Markdown>{props.content}</Markdown>}
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
 }

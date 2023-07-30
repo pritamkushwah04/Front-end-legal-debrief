@@ -1,4 +1,5 @@
 import Post from "../post/Post";
+import CardSkeleton from "../CardSkeleton";
 // import Pagination from "../Paggination";
 import "./newsPosts.css";
 import { getNewsPosts } from "../../api/posts";
@@ -44,8 +45,17 @@ export default function Posts() {
 
   if (fetching)
     return (
-      <div className="p-10 flex justify-center items-center">
-        <ReactLoading type="bars" color="lightblue" />
+      <div className="newsPosts  flex justify-center items-center">
+        {/* <ReactLoading type="bars" color="lightblue" /> */}
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
         
         {/* <Post></Post> */}
       </div>

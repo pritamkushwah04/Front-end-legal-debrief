@@ -9,7 +9,7 @@ export default function Post(props) {
 
   // Last seen: <ReactTimeAgo date={date} locale="en-US"/>
   return (
-    <div className="post">
+    <div className="post ">
       <img className="postImg" src={props.img} alt="" />
       <h5 className="postDate">{dateFormat(props.date, "mmmm d, yyyy")}</h5>
       <div className="postInfo">

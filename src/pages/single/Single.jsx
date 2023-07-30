@@ -10,33 +10,32 @@ import {
 } from "../../api/posts";
 import dateFormat from "dateformat";
 import styles from "../../index.css"
+import PostSkeleton from "../../components/PostSkeleton";
+
+
 
 export default function Single() {
   const params = useParams();
   const postId = params.postId;
-  // console.log(postId);
+
   const [totalPosts, setTotalPost] = useState([]);
   const [postCount, setPostCount] = useState([]);
+  const [fetching, setFetching] = useState(true);
   console.log(styles);
 
   const fetchPosts = async () => {
-    // const totalPosts = await getBlogPosts();
-    // const totalNews = await getNewsPosts();
-    // const totalOpp = await getOpportunityPosts();
     let totalPosts = [];
     let promises = [getBlogPosts(), getNewsPosts(), getOpportunityPosts()];
     await Promise.all(promises).then((data) => {
-      // totalPosts.push(...data.posts);
-      // totalPosts = [...totalPosts, data.posts];
       data.forEach((item) => {
         totalPosts = [...totalPosts, ...item.posts];
       });
     });
-
-    console.log({ totalPosts });
+    setFetching(false);
     setTotalPost(totalPosts);
     setPostCount(totalPosts.length);
   };
+
   const [postInfo, setPostInfo] = useState({
     pslug: "",
     ptitle: "",
@@ -50,17 +49,9 @@ export default function Single() {
   }, []);
 
   useEffect(() => {
-    // var ptitle;
-    // var pslug;
-    // var pimg;
-    // var pcontent;
-
     if (postCount !== 0) {
       let tempPost = totalPosts.find((post) => post.id === postId);
-      console.log("in single post");
-      console.log({ tempPost });
-
-      if (tempPost)
+      if (tempPost) {
         setPostInfo({
           ptitle: tempPost.title,
           pslug: tempPost.slug,
@@ -68,26 +59,36 @@ export default function Single() {
           pcontent: tempPost.content,
           pdate: tempPost.createdAt,
         });
+      }
     }
   }, [postCount, totalPosts, postId]);
 
-  return (
-    <div className="bg-[#dedede]">
-      {postCount ? (
-        <div className="flex flex-wrap mx-auto py-4">
-          <SinglePost className=""
-            key={postInfo.slug}
-            id={postId}
-            title={postInfo.ptitle}
-            img={postInfo.pimg}
-            content={postInfo.pcontent}
-            date={dateFormat(postInfo.pdate, "mmmm d, yyyy")}
-          ></SinglePost>
-          <Sidebar className=""/>
-        </div>
-      ) : (
-        <h1>NO POST</h1>
-      )}
-    </div>
-  );
+  if (fetching) {
+    return (
+      <PostSkeleton />
+    )
+  } else {
+    return (
+      <div className="bg-[#dedede]">
+        {postCount ? (
+          <div className="flex flex-wrap mx-auto py-4">
+            <SinglePost className=""
+              key={postInfo.slug}
+              id={postId}
+              title={postInfo.ptitle}
+              img={postInfo.pimg}
+              content={postInfo.pcontent}
+              date={dateFormat(postInfo.pdate, "mmmm d, yyyy")}
+            ></SinglePost>
+            <Sidebar className="" />
+          </div>
+        ) : (
+          <h1>NO POST</h1>
+        )}
+      </div>
+    );
+  }
+
+
+
 }
