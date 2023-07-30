@@ -13,7 +13,7 @@ export default function Homepage() {
   return (
     <div>
       <FeaturedPosts />
-      <div className="hhome">
+      <div className="flex justify-center bg-[#dedede] ">
         <NewsPosts />
         <Sidebar />
       </div>
