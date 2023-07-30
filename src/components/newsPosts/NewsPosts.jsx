@@ -1,9 +1,9 @@
 import Post from "../post/Post";
+import CardSkeleton from "../CardSkeleton";
 // import Pagination from "../Paggination";
 import "./newsPosts.css";
 import { getNewsPosts } from "../../api/posts";
 // import { getTotalNewsPosts } from "../../api/posts";
-import ReactLoading from "react-loading";
 // import styles from "../../index"
 
 import React, { useEffect, useState } from 'react';
@@ -41,15 +41,20 @@ export default function Posts() {
     fetchPosts();
   }, []);
 
-  // const fetchMorePosts = (index) => {
-  //   pageNo = index;
-  //   fetchPosts();
-  // }
 
   if (fetching)
     return (
-      <div className="p-10 flex justify-center items-center">
-        <ReactLoading type="bars" color="lightblue" />
+      <div className="newsPosts  flex justify-center items-center">
+        {/* <ReactLoading type="bars" color="lightblue" /> */}
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
         
         {/* <Post></Post> */}
       </div>

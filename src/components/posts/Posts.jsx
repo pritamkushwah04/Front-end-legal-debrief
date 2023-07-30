@@ -1,5 +1,6 @@
 import Post from "../post/Post";
 import "./posts.css";
+import CardSkeleton from "../CardSkeleton";
 import { getBlogPosts } from "../../api/posts";
 // import { getTotalBlogPosts } from "../../api/posts";
 
@@ -10,9 +11,11 @@ let pageNo = 0;
 export default function Posts() {
   const [posts, setPosts] = useState([]);
   const [totalPostCount, setTotalPostCount] = useState(0);
-  
+  const [fetching, setFetching] = useState(true);
+
   const fetchPosts = async () => {
     const { error, posts } = await getBlogPosts(pageNo, 100);
+    setFetching(false);
     if (error) {
       return console.log(error);
     }
@@ -23,6 +26,24 @@ export default function Posts() {
   useEffect(() => {
     fetchPosts();
   }, []);
+  
+  if (fetching)
+    return (
+      <div className="newsPosts  flex justify-center items-center">
+        {/* <ReactLoading type="bars" color="lightblue" /> */}
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        
+        {/* <Post></Post> */}
+      </div>
+  );
 
   return (
     <div>

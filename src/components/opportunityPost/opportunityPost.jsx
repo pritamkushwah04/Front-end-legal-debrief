@@ -1,12 +1,13 @@
 import Post from "../post/Post";
 import "./opportunityPost.css";
+import CardSkeleton from "../CardSkeleton";
 import { getOpportunityPosts } from "../../api/posts";
 // import { getTotalOpportunityPosts } from "../../api/posts";
 
 import React, {useEffect,useState} from 'react';
 
 let pageNo = 0;
-const POST_LIMIT = 9;
+// const POST_LIMIT = 9;
 
 // const getPaginationCount = (length) => {
 //     const division = length / POST_LIMIT;
@@ -22,9 +23,11 @@ export default function Posts() {
  
   const [posts, setPosts] = useState([]);
   const [totalPostCount, setTotalPostCount] = useState([]);
- 
+  const [fetching, setFetching] = useState(true);
+
   const fetchPosts = async () => {
     const { error, posts} = await getOpportunityPosts(pageNo, (Math.floor(totalPostCount/3))*3);
+    setFetching(false);
     if(error){
         return console.log(error);
     }
@@ -35,7 +38,24 @@ export default function Posts() {
   useEffect(() => {
     fetchPosts();
   }, );
-
+  
+  if (fetching)
+    return (
+      <div className="newsPosts  flex justify-center items-center">
+        {/* <ReactLoading type="bars" color="lightblue" /> */}
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        <CardSkeleton/>
+        
+        {/* <Post></Post> */}
+      </div>
+    );
   return (
     <div>
     <div className="posts">

@@ -3,6 +3,7 @@ import "./featuredPosts.css";
 import FeaturedPost from "../featuredPost/featuredPost";
 import { getFeaturedPosts } from "../../api/posts";
 import React, {useEffect,useState} from 'react';
+import FeaturedPostSkeleton from "../FeaturedPostSkeleton";
 
 export default function FeaturedPosts(){
     
@@ -14,14 +15,20 @@ export default function FeaturedPosts(){
     const [featuredposts, setFeaturedPosts] = useState([]);
     const fetchPosts = async () => {
         const fPosts= await getFeaturedPosts();
-        console.log("fPosts");
         setFeaturedPosts(fPosts.posts);
     };
     useEffect(() => {
         fetchPosts();
     }, []);
     
-
+    if(!featuredposts.length){
+        return(
+            <div className='flex justify-center bg-[#dedede]'>
+               <FeaturedPostSkeleton/>
+               <FeaturedPostSkeleton/>
+            </div>
+        )
+    }
       
     return(
       <div className='fp'>
