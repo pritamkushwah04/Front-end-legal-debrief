@@ -3,10 +3,9 @@ import Posts from "../../components/posts/Posts";
 import Sidebar from "../../components/sidebar/Sidebar";
 
 export default function Blogs() {
-  console.log("blog called");
   return (
     <>
-      <div className="home">
+      <div className="flex justify-center bg-[#dedede] pt-4">
       <Posts />
       <Sidebar />
       </div>

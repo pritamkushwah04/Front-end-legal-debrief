@@ -58,7 +58,7 @@ export default function Posts() {
     );
   return (
     <div>
-    <div className="posts">
+    <div className="flex flex-wrap max-w-screen-lg justify-center">
       {posts.slice(0,Math.floor(totalPostCount/3)*3).map(post => (
         <Post key={post.slug} id={post.id} title={post.title} img={post.thumbnail} content={post.content} date={post.createdAt} />
       ))}

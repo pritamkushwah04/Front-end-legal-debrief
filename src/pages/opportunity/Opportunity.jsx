@@ -23,7 +23,7 @@ export default function Opportunity() {
 
     <>
       <OpportunitiesTopBar />
-      <div className="opphome">
+      <div className="flex justify-center bg-[#dedede] pt-4">
         <Switch>
           <Route exact path={path}>
             <OpportunityPost />
@@ -43,22 +43,6 @@ export default function Opportunity() {
           <Route path="/opportunity/moots">
             <Moots />
           </Route>
-          
-          {/* <Route path="/opportunity/debate">
-            <Debate />
-          </Route>
-          <Route path="/opportunity/debate">
-            <Debate />
-          </Route>
-          <Route path="/opportunity/debate">
-            <Debate />
-          </Route>
-          <Route path="/opportunity/debate">
-            <Debate />
-          </Route>
-          <Route path="/opportunity/debate">
-            <Debate />
-          </Route>  */}
         </Switch>
         <Sidebar />
       </div>

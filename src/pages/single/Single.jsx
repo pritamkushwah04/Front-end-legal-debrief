@@ -7,6 +7,7 @@ import {
   getBlogPosts,
   getOpportunityPosts,
   getNewsPosts,
+  getFeaturedPosts,
 } from "../../api/posts";
 import dateFormat from "dateformat";
 import styles from "../../index.css"
@@ -25,7 +26,7 @@ export default function Single() {
 
   const fetchPosts = async () => {
     let totalPosts = [];
-    let promises = [getBlogPosts(), getNewsPosts(), getOpportunityPosts()];
+    let promises = [getBlogPosts(), getNewsPosts(), getOpportunityPosts(), getFeaturedPosts()];
     await Promise.all(promises).then((data) => {
       data.forEach((item) => {
         totalPosts = [...totalPosts, ...item.posts];

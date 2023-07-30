@@ -10,15 +10,20 @@ import { getFeaturedPosts } from "../../api/posts";
 export default function Single() {
   const params = useParams();
   const postId = params.postId;
-  console.log("postId: " + postId);
+ 
   const [totalPosts, setTotalPost] = useState([]);
   const [postCount, setPostCount] = useState([]);
-  console.log("featuredSingle called");
+  
   const fetchPosts = async () => {
-    //call getTotalFeaturedPosts()
-    const totalPosts = await getFeaturedPosts();
+    let totalPosts = [];
+    let promises = getFeaturedPosts();
+    await Promise.all(promises).then((data) => {
+      data.forEach((item) => {
+        totalPosts = [...totalPosts, ...item.posts];
+      });
+    });
     setTotalPost(totalPosts);
-    setPostCount(totalPosts.posts.length);
+    setPostCount(totalPosts.length);
   };
 
   useEffect(() => {
@@ -30,8 +35,6 @@ export default function Single() {
   var pimg;
   var pcontent;
   var pdate;
-  console.log("in featured");
-  console.log(totalPosts.posts);
   
   if (postCount !== 0) {
     totalPosts.posts.map(post => {
