@@ -1,1 +1,1 @@
-Live URL https://legal-debrief.onrender.com/blogs
+Live URL https://master--legaldebrief.netlify.app/
